@@ -1,0 +1,38 @@
+In the answer, obey the following recommendations: 
+
+- show which morphisms are sets and when the category Sets is used. Frequently, characteristics that are specific to Sets, such as function composition, are used and this should be made clear. 
+
+- make it clear which morphism operation is used if different kinds of morphisms operations are used in the explanation. For example, you can say in the answer that $f \circ_{\mathbb{C}} g$ and $h \circ{\mathbb{D}} h_1$ to show exactly which categories are used in each operation $\circ$. 
+
+- make it clear the meaning of $\circ$ in the text if the examples used belong to a known category such as Sets, Posets, a single Poset, Mon, or a monoid. For example, if the category is Sets, $\circ$ is function composition. 
+
+- draw the more complex diagrams (more than one horizontal line such as $A \leftarrow A\times B \rightarrow B$) in the notebook Studio using tikz-cd and reference the diagrams in the answer. 
+
+- if your answer has a diagram, draw it in the Studio with the following recommendations:
+  * the initial input to the proposition, theorem, or UMP should use the color Black. This is valid both to objects and morphisms. The initial input is composed by the objects and morphisms given in the proposition, theorem, or UMP. 
+  * each time the explanation or proof deduces that a given morphism or object should exist based on the existing objects and morphisms, draw them, both objects and morphisms, in the color blue. If the explanation deduces a new object or morphism, draw them in the color green. The next deduced objects and morphisms should be drawn in the colors yellow, orange and red, in this order. Do this even in the case of helper morphisms, which are intermediary morphisms that help to construct the proof. 
+  * below the diagram, create a list of squares, one for each color used in the diagram (except Black). For each square, put in the left side of it the proposition, theorem, or UMP used in the deduction of the new objects and morphisms that have that color. Then, this list of squares is the legend of the diagram that comes above. 
+  * we will give an example of how to draw a diagram. We will use $\mid X\mid$ for the set of the monoid $X$, which is obtained by applying the forgetful functor $U$ to $X$ ($U(X) = \mid X\mid$). 
+  The example consists of the following initial input:  an object A (a set), the set of its free monoid M(A), which is $\mid M(A)\mid$, $\mid N\mid$ ($N$ is a monoid), $\mid M(\mid M(A)\mid)\mid$, the arrows  $i_1: A \to \mid M(A)\mid$ and $f: A \to \mid N\mid$. All of these objects and arrows should have the color black. Applying the UMP of the free monoid on $A$, $\mid M(A)\mid$, and $f$, we get arrow $\mid \bar{f}\mid: \mid M(A)\mid \to \mid N\mid$. This is the first deduction. Therefore, arrow $\mid \bar{f}\mid$ should be drawn blue. There should be a blue square below the diagram with the label "UMP of the free monoid on $i_1$ and $f$". We can use the UMP of the free monoid on $\mid M(A)\mid$, $\mid M(\mid M(A)\mid)\mid$, $\mid N\mid$, and the arrows $i_2: \mid M(A)\mid \to \mid M(\mid M(A)\mid)\mid$ and 
+  $\mid \bar{f}\mid: \mid M(A)\mid \to \mid N\mid$ resulting in arrow 
+  $\mid\bar{g}\mid: \mid M(\mid M(A)\mid)\mid \to \mid N\mid$. Hence arrow $\mid\bar{g}\mid$ should be drawn with the next color, green. If there were another deduction, the objects and arrows should be drawn yellow, and so on. The resulting tikzcd latex code is:
+  
+  \begin{tikzcd}[row sep=normal]
+{|M(|M(A)|)|} \arrow[dr, "{|\bar{g}|}", green, dashed] & \\
+{|M(A)|} \arrow[r, "{|\bar{f}|}", blue, dashed] \arrow[u, "i_2"'] & {|N|} \\
+A \arrow[u, "i_1"'] \arrow[ur, "f"] & \\
+\end{tikzcd}
+
+\begin{tabular}[t]{l}
+  \textcolor{blue}{\rule{2ex}{2ex}}\hspace*{2ex} {\small UMP of the free monoid on $i_1$ and $f$} \\[0.2em]
+  \textcolor{green}{\rule{2ex}{2ex}}\hspace*{2ex} {\small UMP of the free monoid on $i_2$ and $|\bar{f}|$}
+\end{tabular} 
+
+Use exactly this format: a tikzcd environment followed by a tabular with the colors and theirs labels. 
+  
+- whenever a deduction uses a proposition, theorem, or UMP, cite it explicitly. For example, the text could be: "The expression (3) is deduced from expressions (1) and (2) using Theorem 2.34". 
+
+- this item applies only if the question (prompt) asks to explain a UMP that has both a purely abstract description (specification) and a concrete model (verification). For example, Free Monoid and Coequalizer have both the abstract description and the concrete model. In your answer, give first the abstract description (clearly labeled as such) and then the concrete model (clearly labeled as such).
+
+- double check the Latex text between $ and $ or between $$ and $$ or between \[ and \]. Sometimes you are not producing the Latex text correctly, mainly when there is the backslash character '\'. Remember that, in a table environment, you cannot use | in the Latex code because that conflicts with the table characters in markdown. Use $\mid$ or, for the forgetful functor, use $U(M)$ instead of |M|. 
+
