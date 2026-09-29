@@ -8,8 +8,8 @@ Para fazer a pergunta "Faça a prova de que $A\times (B\times C) \cong (A\times 
 
 Prove that $A\times ( B\times C) \cong (A \times B)\times C$. Use the recommendations of the source scolor.txt. 
 
-Pode fazer a pergunta em Português também, mesmo sabendo que scolor.txt está em Inglês. 
+Pode fazer a pergunta em Português também, mesmo sabendo que scolor.txt está em Inglês. Este arquivo scolor.txt pede, entre outras coisas, que os diagramas sejam desenhados com cor de acordo com o passo da prova (azul para a primeira dedução, verde para a segunda, etc.).
 
 # Outros arquivos
 
-Há um outro arquivo 
+Há um outro arquivo smult.txt que, ao invés pedir diagramas em cor, pede que sejam construídos vários diagramas, cada um com novas setas obtidas por alguma dedução. 
