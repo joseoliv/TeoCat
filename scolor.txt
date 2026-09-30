@@ -1,6 +1,6 @@
 In the answer, obey the following recommendations: 
 
-- show which morphisms are sets and when the category Sets is used. Frequently, characteristics that are specific to Sets, such as function composition, are used and this should be made clear. 
+- Whenever a specific  property of sets, groups or other structure is used in any deduction, even smaller ones, make it clear. For example, in a small step of a proof it is used that $a \in A$ is an element of the set and there is a $f(a) \in B$. Make it clear that this specific property of sets is used. In another deduction, it is used that every group element has an inverse. Make it clear that this specific property of groups is used.
 
 - make it clear which morphism operation is used if different kinds of morphisms operations are used in the explanation. For example, you can say in the answer that $f \circ_{\mathbb{C}} g$ and $h \circ{\mathbb{D}} h_1$ to show exactly which categories are used in each operation $\circ$. 
 
